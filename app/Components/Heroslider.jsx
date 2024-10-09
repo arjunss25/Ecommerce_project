@@ -39,7 +39,7 @@ export default function Heroslider({ images }) {
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
               <Image 
                 src={item.image} 
-                alt={item.alt || `Slide ${index + 1}`} 
+                alt={''} 
                 layout="fill"
                 objectFit="cover"
               />

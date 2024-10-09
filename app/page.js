@@ -10,6 +10,10 @@ import Marquee from './Components/Marquee';
 import Bestseller from './Components/Bestseller';
 import Toppicks from './Components/Toppicks';
 import Justtrending from './Components/Justtrendign';
+import Shopbycategory from './Components/Shopbycategory';
+import Bestdeal from './Components/Bestdeal';
+import Testimonialmain from './Components/Testimonialmain';
+import Footer from './Components/Footer';
 
 const Heroslider = dynamic(() => import('./Components/Heroslider'), { ssr: false });
 
@@ -78,6 +82,10 @@ const Page = () => {
       <Bestseller data={bestseller}/>
       <Toppicks/>
       <Justtrending/>
+      <Shopbycategory/>
+      <Bestdeal/>
+      <Testimonialmain/>
+      <Footer/>
     </div>
   )
 }
