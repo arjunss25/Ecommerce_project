@@ -2,13 +2,15 @@ import React from 'react'
 import { IoMdArrowDropdown } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import Link from 'next/link';
+import Dropdown from './Dropdown';
 
 const Secondarynavbar = () => {
   return (
     <div className='w-full h-[10vh] bg-[#AAF1FF] px-10  hidden lg:flex items-center justify-between'>
 
-        <div className="category-div">
+        <div className="category-div relative">
             <Link href="" className='flex gap-2 items-center'>Category <IoMdArrowDropdown /></Link>
+            <Dropdown/>
         </div>
 
         <div className="nav-links-main flex gap-10">

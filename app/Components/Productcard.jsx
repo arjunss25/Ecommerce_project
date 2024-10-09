@@ -6,8 +6,8 @@ import { IoMdHeartEmpty } from "react-icons/io";
 
 const Productcard = () => {
   return (
-    <div className='w-[23rem] h-[55vh] bg-[#F7F6FB] rounded-[1.5rem] pb-3'>
-        <div className="product-img h-[55%] overflow-hidden relative">
+    <div className='w-[18rem] h-[55vh] bg-[#F7F6FB] rounded-[1.5rem] pb-3'>
+        <div className="product-img h-[45%] overflow-hidden relative">
 
             <div className="fav absolute top-5 left-5 bg-white w-10 h-10 rounded-full flex items-center justify-center text-[1.5rem]">
                 <IoMdHeartEmpty />
@@ -21,7 +21,7 @@ const Productcard = () => {
             <Image src='/productimg.png' width={500} height={150}></Image>
         </div>
 
-        <div className="elements h-[30%]  w-full flex pl-5 ">
+        <div className="elements h-[40%]  w-full flex pl-5 ">
 
 
             {/* left-sec */}
@@ -36,7 +36,7 @@ const Productcard = () => {
             </div>
 
             {/* right-sec */}
-            <div className="right-section w-[40%] h-full flex flex-col items-end">
+            <div className="right-section w-[40%] h-full flex flex-col items-end  relative">
 
 
                 <div className="review-btn  flex w-[5rem] h-[2rem] rounded-full bg-gradient-to-t from-green-500 to-green-800 flex items-center justify-center gap-2 text-white mt-5 mr-5">
@@ -45,7 +45,7 @@ const Productcard = () => {
                 </div>
 
 
-                <div className="add-cart-btn w-[9rem] py-2 rounded-tl-full rounded-bl-full bg-black text-white flex mt-2 justify-center items-center gap-2 ">
+                <div className="add-cart-btn w-[9rem] py-2 rounded-tl-full rounded-bl-full bg-black text-white flex mt-2 justify-center items-center gap-2 absolute bottom-8 right-0">
                 <IoMdCart className='text-[1.2rem]' />
                 <h1 className='text-[0.9rem]'>Add to Cart</h1>
                 </div>
