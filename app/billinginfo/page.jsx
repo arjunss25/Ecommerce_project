@@ -28,13 +28,7 @@ const page = () => {
             </div>
 
 
-          {/* cart-items-section */}
-          <div className="cart-items-section w-full flex justify-center items-center flex-col gap-5 px-10 mt-10">
-            <Cartproductscard/>
-            <Cartproductscard/>
-            <Cartproductscard/>
-            <Cartproductscard/>
-          </div>
+          
 
 
 
