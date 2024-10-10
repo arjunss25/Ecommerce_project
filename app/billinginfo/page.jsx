@@ -6,20 +6,21 @@ import MainNavbar from '../Components/MainNavbar'
 import Ordersummary from '../Components/Ordersummary'
 import Secondarynavbar from '../Components/Secondarynavbar'
 
-const Cart = () => {
+const page = () => {
   return (
     <div>
         <MainNavbar/>
         <Secondarynavbar/>
 
-        <div className="Cart-content-section flex lg:flex-row flex-col">
+
+        <div className="billibginfo-content-section flex lg:flex-row flex-col">
 
           {/* left-section */}
         <div className="left-section w-full lg:w-[60vw] min-h-[80vh] ">
 
           {/* top-title-section */}
             <div className="cart-top-section w-full h-[15vh] flex items-center justify-between px-5 py-2">
-              <h1 className='text-[2rem] sm:text-[4rem] font-semibold'>Your Cart</h1>
+              <h1 className='text-[2rem] sm:text-[4rem] font-medium'>Billing</h1>
               <div className="check-section flex gap-1">
                 <Checkbox/>
                 <h2>Select All</h2>
@@ -50,9 +51,8 @@ const Cart = () => {
 
         </div>
         <Footer/>
-        
     </div>
   )
 }
 
-export default Cart
+export default page
