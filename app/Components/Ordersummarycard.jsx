@@ -18,9 +18,9 @@ const Ordersummarycard = () => {
 
       <div className="right-section w-[28rem] h-full bg-zinc-200">
         <div>
-          <h2 className="text-sm">Perfume</h2>
-          <h2 className="text-lg font-semibold truncate">SAUVAGE dior</h2>
-          <h2 className="text-sm">50ml</h2>
+          <h2 className="text-lg">Perfume</h2>
+          <h2 className="text-[1.8rem] font-semibold truncate">SAUVAGE dior</h2>
+          <h2 className="text-lg">50ml</h2>
         </div>
       </div>
     </div>
