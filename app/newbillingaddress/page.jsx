@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Footer from '../Components/Footer'
 import MainNavbar from '../Components/MainNavbar'
 import Ordersummary from '../Components/Ordersummary'
