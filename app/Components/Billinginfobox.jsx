@@ -7,7 +7,7 @@ const Billinginfobox = () => {
   return (
     <div className='w-full w-[24rem] h-auto min-h-[200px] border-2 border-black rounded-3xl p-4 sm:p-5 flex flex-col justify-between'>
       <div className="top-sec w-full flex justify-between items-center">
-        <h1 className='font-medium text-lg sm:text-xl'>Name</h1>
+        <h1 className='font-medium text-lg sm:text-[0.9rem]'>Name</h1>
         <Checkbox/>
       </div>
 

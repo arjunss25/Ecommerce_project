@@ -10,13 +10,13 @@ const Ordersummary = () => {
 
 
         <div className="pricing-info w-full">
-            <div className="total-price-sec w-full flex justify-between py-5 border-b-[2px] border-black text-[1.2rem]">
+            <div className="total-price-sec w-full flex justify-between py-5 border-b-[2px] border-black text-[1.1rem]">
                 <h1>Product Total(3)</h1>
                 <h1>₹4000</h1>
             </div>
 
 
-            <div className="tax-sec w-full  py-5 border-b-[2px] border-black text-[1.2rem]">
+            <div className="tax-sec w-full  py-5 border-b-[2px] border-black text-[1.1rem]">
                 <div className="tax-1 flex justify-between">
                     <h1>Total without VAT</h1>
                     <h1>₹4150</h1>
@@ -28,14 +28,14 @@ const Ordersummary = () => {
             </div>
 
 
-            <div className="overall-total w-full flex justify-between py-5 text-[1.2rem]">
+            <div className="overall-total w-full flex justify-between py-5 text-[1.1rem]">
                 <h1>Order Total</h1>
                 <h1>₹4565</h1>
             </div>
 
 
 
-            <div className="voucher-section w-full flex justify-between py-5  text-[1.2rem]">
+            <div className="voucher-section w-full flex justify-between py-5  text-[1.1rem]">
                 <input type="text" className='w-[60%] sm:w-[70%] border-[2px] border-black rounded-[1rem] px-3' placeholder='Enter Your Code' />
                 <h1 className='w-[30%] sm:w-[20%] flex items-center justify-center py-2 border-[2px] border-black rounded-[1rem]'>Apply</h1>
             </div>
