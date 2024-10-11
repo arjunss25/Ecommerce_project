@@ -1,20 +1,33 @@
-import "./Radiobtn.css"
+import React from 'react';
+
+const RadioButton = ({ id, name, label }) => {
+  return (
+    <div className="flex items-center">
+      <input
+        type="radio"
+        id={id}
+        name={name}
+        className="hidden peer"
+      />
+      <label
+        htmlFor={id}
+        className="inline-flex items-center justify-center w-6 h-6 border-2 border-gray-300 rounded-full cursor-pointer peer-checked:border-orange-600 peer-checked:before:bg-orange-600 before:content-[''] before:w-3 before:h-3 before:rounded-full before:transition-all before:duration-300 peer-checked:before:scale-100 before:scale-0"
+      >
+        <span className="sr-only">{label}</span>
+      </label>
+      {label && (
+        <span className="ml-2 text-gray-700">{label}</span>
+      )}
+    </div>
+  );
+};
 
 const Radiobtn = () => {
   return (
-   
-    /* From Uiverse.io by gharsh11032000 */ 
-<div className="radio-buttons-container">
-<div className="radio-button">
-  <input name="radio-group" id="radio2" className="radio-button__input" type="radio"/>
-  <label for="radio2" className="radio-button__label">
-    <span className="radio-button__custom"></span>
-  </label>
-</div>
+    <div className="space-y-2">
+      <RadioButton id="radio1" name="radio-group" />
+    </div>
+  );
+};
 
-
-</div>
-  )
-}
-
-export default Radiobtn
+export default Radiobtn;

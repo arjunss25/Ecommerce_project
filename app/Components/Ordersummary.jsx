@@ -1,67 +1,63 @@
-import React from 'react'
+import React from 'react';
 import { GoShieldLock } from "react-icons/go";
 
 const Ordersummary = () => {
   return (
-    <div className='w-[90%] sm:w-[60%] lg:w-[80%]'>
-        <div className="title-sec  py-5 border-b-[2px] border-red-500">
-            <h1 className='text-[2rem] font-semibold'>SUMMARY</h1>
+    <div className='w-full max-w-md mx-auto p-6'>
+      <div className="title-sec py-4 border-b-2 border-red-500 mb-6">
+        <h1 className='text-2xl font-semibold'>SUMMARY</h1>
+      </div>
+
+      <div className="pricing-info space-y-4">
+        <div className="total-price-sec flex justify-between py-3 border-b border-gray-300">
+          <h2 className='text-lg'>Product Total (3)</h2>
+          <span className='text-lg'>₹4000</span>
         </div>
 
-
-        <div className="pricing-info w-full">
-            <div className="total-price-sec w-full flex justify-between py-5 border-b-[2px] border-black text-[1.1rem]">
-                <h1>Product Total(3)</h1>
-                <h1>₹4000</h1>
-            </div>
-
-
-            <div className="tax-sec w-full  py-5 border-b-[2px] border-black text-[1.1rem]">
-                <div className="tax-1 flex justify-between">
-                    <h1>Total without VAT</h1>
-                    <h1>₹4150</h1>
-                </div>
-                <div className="tax-1 flex justify-between">
-                    <h1>Total with 10% VAT</h1>
-                    <h1>₹4565</h1>
-                </div>
-            </div>
-
-
-            <div className="overall-total w-full flex justify-between py-5 text-[1.1rem]">
-                <h1>Order Total</h1>
-                <h1>₹4565</h1>
-            </div>
-
-
-
-            <div className="voucher-section w-full flex justify-between py-5  text-[1.1rem]">
-                <input type="text" className='w-[60%] sm:w-[70%] border-[2px] border-black rounded-[1rem] px-3' placeholder='Enter Your Code' />
-                <h1 className='w-[30%] sm:w-[20%] flex items-center justify-center py-2 border-[2px] border-black rounded-[1rem]'>Apply</h1>
-            </div>
-
-
-
-            <div className="voucher-section w-full flex justify-center items-center py-5  mt-5 bg-black text-white">
-                <h1 className='text-[#D7F400]'>Proceed to Checkout</h1>
-            </div>
-            <h1 className='flex w-full items-center justify-center text-[0.8rem] gap-3 mt-1'><GoShieldLock />Payments are processed securely</h1>
-
-
-            <div className="total-price-sec w-full flex justify-center gap-1 sm:gap-5 py-5 border-t-[2px] border-black mt-10">
-            <img src="/pay (1).png" alt="" />
-            <img src="/pay (2).png" alt="" />
-            <img src="/pay (3).png" alt="" />
-            <img src="/pay (4).png" alt="" />
-            <img src="/pay (5).png" alt="" />
-            </div>
-
-
-
-
+        <div className="tax-sec py-3 border-b border-gray-300 space-y-2">
+          <div className="tax-1 flex justify-between">
+            <h2 className='text-lg'>Total without VAT</h2>
+            <span className='text-lg'>₹4150</span>
+          </div>
+          <div className="tax-1 flex justify-between">
+            <h2 className='text-lg'>Total with 10% VAT</h2>
+            <span className='text-lg'>₹4565</span>
+          </div>
         </div>
+
+        <div className="overall-total flex justify-between py-3 border-b-2 border-black">
+          <h2 className='text-xl font-bold'>Order Total</h2>
+          <span className='text-xl font-bold'>₹4565</span>
+        </div>
+
+        <div className="voucher-section flex justify-between py-3 space-x-2">
+          <input 
+            type="text" 
+            className='flex-grow border border-gray-300 rounded-full px-4 py-2 text-lg' 
+            placeholder='Enter Your Code' 
+          />
+          <button className='w-24 border border-gray-300 rounded-full py-2 text-lg hover:bg-gray-100 transition'>Apply</button>
+        </div>
+
+        <button className="w-full py-3 mt-6 bg-black text-[#D7F400] rounded-lg text-lg font-semibold hover:bg-gray-800 transition">
+          Proceed to Checkout
+        </button>
+
+        <div className='flex items-center justify-center text-sm mt-2 text-gray-600'>
+          <GoShieldLock className="mr-2" />
+          <span>Payments are processed securely</span>
+        </div>
+
+        <div className="payment-methods flex justify-center gap-4 py-4 border-t border-gray-300 mt-8">
+          <img src="/pay (1).png" alt="Payment method" className="h-6" />
+          <img src="/pay (2).png" alt="Payment method" className="h-6" />
+          <img src="/pay (3).png" alt="Payment method" className="h-6" />
+          <img src="/pay (4).png" alt="Payment method" className="h-6" />
+          <img src="/pay (5).png" alt="Payment method" className="h-6" />
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Ordersummary
+export default Ordersummary;

@@ -7,68 +7,48 @@ import Secondarynavbar from '../Components/Secondarynavbar'
 import Billinginfobox from '../Components/Billinginfobox'
 import { GrAdd } from "react-icons/gr";
 
-
-const page = () => {
+const BillingInfoPage = () => {
   return (
-    <div>
-        <MainNavbar/>
-        <Secondarynavbar/>
+    <div className="min-h-screen flex flex-col">
+      <MainNavbar />
+      <Secondarynavbar />
 
+      <div className="flex-grow flex flex-col lg:flex-row">
+        {/* Left section */}
+        <div className="w-full lg:w-3/5 p-6 lg:p-10">
+          <div className="flex items-center justify-between mb-8">
+            <h1 className="text-3xl lg:text-4xl font-medium">Billing</h1>
+            <button className="px-6 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800 transition flex items-center space-x-2">
+              <GrAdd className="text-white text-lg" />
+              <span>Add New Address</span>
+            </button>
+          </div>
 
-        <div className="billibginfo-content-section flex lg:flex-row flex-col">
-
-          {/* left-section */}
-        <div className="left-section w-full lg:w-[60vw] min-h-[80vh] ">
-
-          {/* top-title-section */}
-            <div className="cart-top-section w-full h-[15vh] flex items-center justify-between px-5 py-2">
-              <h1 className='text-[2rem] sm:text-[4rem] font-medium'>Billing</h1>
-              <div className="btn px-6 py-2 bg-black rounded-[2rem] w-fit ">
-                <h1 className='text-white text-[1rem] flex items-center gap-3'><GrAdd  className='text-white text-[1.3rem]'/> Add New Address</h1>
-              </div>
-            </div>
-
-
-            <div className="billing-info-content w-full px-10">
-
-{/* billing-templates */}
-              <div className="basic-info-sec w-full  py-5  text-[1.2rem]">
-                  <div className="">
-                    <h1 className='font-medium mb-2 text-[1.5rem]'>Select the Billing details</h1>
-                      
-                      <div className="billing-box mt-10 flex flex-wrap gap-5 ">
-                        <Billinginfobox/>
-                      </div>
-
-
-                      <div className="btn px-6 py-2 bg-black rounded-[2rem] w-fit mt-8">
-                        <h1 className='text-white text-[1rem]'>Deliver Here</h1>
-                      </div>
-
-                  </div>
+          <div className="space-y-8">
+            <div>
+              <h2 className="font-medium text-xl mb-6">Select the Billing details</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <Billinginfobox />
+                <Billinginfobox />
               </div>
 
+              <button className="px-6 py-2 bg-black text-white rounded-full text-sm hover:bg-gray-800 transition">
+                Deliver Here
+              </button>
             </div>
-
-          
-
-
-
+          </div>
         </div>
 
-
-        {/* right-section */}
-        <div className="right-section w-full lg:w-[40vw] min-h-[80vh]  px-2 py-2 flex items-start justify-center">
-          <Ordersummary/>
+        {/* Right section */}
+        <div className="w-full lg:w-2/5 p-6 lg:p-10 bg-gray-50">
+          <Ordersummary />
         </div>
+      </div>
 
-
-        
-
-        </div>
-        <Footer/>
+      <Footer />
     </div>
   )
 }
 
-export default page
+export default BillingInfoPage

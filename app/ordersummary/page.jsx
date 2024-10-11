@@ -6,51 +6,47 @@ import Ordersummary from '../Components/Ordersummary';
 import Secondarynavbar from '../Components/Secondarynavbar';
 import Ordersummarycard from '../Components/Ordersummarycard';
 
-const page = () => {
+const OrderSummaryPage = () => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <MainNavbar />
       <Secondarynavbar />
 
-      <div className="billibginfo-content-section flex lg:flex-row flex-col">
-        {/* left-section */}
-        <div className="left-section w-full lg:w-[60vw] min-h-[80vh] ">
-          {/* top-title-section */}
-          <div className=" w-full h-[15vh] flex items-center justify-between px-5 py-2">
-            <h1 className="text-[2rem] sm:text-[3rem] font-medium">
-              Order Summary
-            </h1>
+      <div className="flex-grow flex flex-col lg:flex-row">
+        {/* Left section */}
+        <div className="w-full lg:w-3/5 p-6 lg:p-10">
+          <div className="mb-8">
+            <h1 className="text-3xl lg:text-4xl font-medium">Order Summary</h1>
           </div>
 
-          {/* order-info */}
-          <div className="order-info px-10 md:px-20">
-            <div className="top-sec-main flex gap-5 items-center">
-              <h1 className="text-[1.5rem] font-medium">Order ID: 334902445</h1>
-              <div className="status w-fit px-3 py-1 bg-red-100 rounded-[2rem] flex items-center justify-center">
-                <h1 className="text-red-500 text-[0.8rem] text-center">Payment pending</h1>
+          <div className="space-y-8">
+            <div className="flex flex-wrap items-center gap-4">
+              <h2 className="text-xl font-medium">Order ID: 334902445</h2>
+              <div className="px-3 py-1 bg-red-100 rounded-full">
+                <span className="text-red-500 text-sm">Payment pending</span>
               </div>
             </div>
 
-            <h2 className="mt-2">
-              June 10 , 2024 at 12:45am from draft orders
-            </h2>
+            <p className="text-gray-600">
+              June 10, 2024 at 12:45am from draft orders
+            </p>
 
-            <div className="card-sec mt-10">
-                <Ordersummarycard />
+            <div className="space-y-6">
+              <Ordersummarycard />
+              <Ordersummarycard />
             </div>
           </div>
-
-          
         </div>
 
-        {/* right-section */}
-        <div className="right-section w-full lg:w-[40vw] min-h-[80vh]  px-2 py-2 flex items-start justify-center">
+        {/* Right section */}
+        <div className="w-full lg:w-2/5 p-6 lg:p-10 bg-gray-50">
           <Ordersummary />
         </div>
       </div>
+
       <Footer />
     </div>
   );
 };
 
-export default page;
+export default OrderSummaryPage;
