@@ -44,7 +44,7 @@ const page = () => {
                   <div className="">
                     <h1 className='font-medium mb-2 text-[1.5rem]'>Shipping Address</h1>
                       <h1>1234 Maple Street Springfield, IL 62701 United States</h1>
-                      <div className="btn px-6 py-2 bg-black rounded-[2rem] w-fit mt-2">
+                      <div className="btn px-6 py-2 bg-black rounded-[2rem] w-fit mt-5">
                         <h1 className='text-white text-[1rem]'>Change Billing Address</h1>
                       </div>
                   </div>
