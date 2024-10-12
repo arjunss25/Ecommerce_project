@@ -3,6 +3,8 @@ import Heroslider from '../Components/Heroslider'
 import MainNavbar from '../Components/MainNavbar'
 import Secondarynavbar from '../Components/Secondarynavbar'
 import { CiFilter } from "react-icons/ci";
+import { products } from '../utils/Produtsarray';
+import Link from 'next/link';
 
 const page = () => {
 
@@ -31,6 +33,24 @@ const page = () => {
                     <CiFilter className='text-[2rem]' />
                 </div>
                 <Heroslider images={images}/>
+
+
+                {products.map((product) =>(
+                    <Link href={`/products/${product.id}`}>
+                        <div key={product.id}>
+                        <h1>{product.name}</h1>
+                        <h2>{product.price}</h2>
+                        </div>  
+                    </Link>
+                ))}
+
+
+
+
+
+
+
+
             </div>
 
         </div>
