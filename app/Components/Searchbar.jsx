@@ -1,4 +1,4 @@
-
+'use client'
 import Link from 'next/link';
 import { GoSearch } from 'react-icons/go';
 import { IoCloseOutline } from "react-icons/io5";

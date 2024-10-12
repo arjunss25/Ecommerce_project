@@ -1,10 +1,11 @@
-'use client'
+
 import Heroslider from '../Components/Heroslider'
 import MainNavbar from '../Components/MainNavbar'
 import Secondarynavbar from '../Components/Secondarynavbar'
 import { CiFilter } from "react-icons/ci";
 import { products } from '../utils/Produtsarray';
 import Link from 'next/link';
+import Productcard from '../Components/Productcard';
 
 const page = () => {
 
@@ -37,10 +38,16 @@ const page = () => {
 
                 {products.map((product) =>(
                     <Link href={`/products/${product.id}`}>
-                        <div key={product.id}>
+                        <Productcard name={product.name}/>
+
+
+
+
+
+                        {/* <div key={product.id}>
                         <h1>{product.name}</h1>
                         <h2>{product.price}</h2>
-                        </div>  
+                        </div>   */}
                     </Link>
                 ))}
 
