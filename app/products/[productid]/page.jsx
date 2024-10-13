@@ -5,6 +5,8 @@ import Link from 'next/link';
 import MainNavbar from "@/app/Components/MainNavbar";
 import Secondarynavbar from "@/app/Components/Secondarynavbar";
 import Heroslider from "@/app/Components/Heroslider";
+import { products } from "@/app/utils/Produtsarray";
+import Productcard from "@/app/Components/Productcard";
 
 
 const page = ({params}) => {
@@ -15,7 +17,7 @@ const page = ({params}) => {
         { image: "/hero1.jpg", alt: "Hero image 3 description" },
       ];
       
-console.log(params);
+// console.log(params.productid);
 
 
 
@@ -35,6 +37,29 @@ console.log(params);
                     <CiFilter className='text-[2rem]' />
                 </div>
                 <Heroslider images={images}/>
+
+
+
+              {products.map((items,index)=>{
+
+                if(items.category == params.productid){
+                  return(
+                    <Link key={index} href={`${params.productid}/${items.id}`}>
+                    <Productcard name={items.name}/>
+                    </Link>
+                  )
+                }else{}
+
+              }
+               
+              )}
+
+
+
+
+
+
+
 
             </div>
 
