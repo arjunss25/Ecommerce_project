@@ -39,25 +39,8 @@ const page = () => {
                 {products.map((product) =>(
                     <Link href={`/products/${product.id}`}>
                         <Productcard name={product.name}/>
-
-
-
-
-
-                        {/* <div key={product.id}>
-                        <h1>{product.name}</h1>
-                        <h2>{product.price}</h2>
-                        </div>   */}
                     </Link>
                 ))}
-
-
-
-
-
-
-
-
             </div>
 
         </div>

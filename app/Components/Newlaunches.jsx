@@ -1,6 +1,7 @@
 
 import Productcard from './Productcard'
 import Mainbtn from './Mainbtn'
+import Link from 'next/link'
 
 const Newlaunches = () => {
   return (
@@ -17,7 +18,9 @@ const Newlaunches = () => {
         <Productcard/>
         </div>
         <div className="bt-section mt-10">
-        <Mainbtn/>
+        <Link href={'/products/newlaunch'} >
+          <Mainbtn/>
+        </Link>
         </div>
     </div>
   )
