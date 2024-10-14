@@ -36,11 +36,21 @@ const page = () => {
                 <Heroslider images={images}/>
 
 
+                
+
+
+            <div className='w-full  mt-10 flex items-center justify-center gap-8 flex-wrap'>
                 {products.map((product) =>(
-                    <Link href={`/products/${product.id}`}>
-                        <Productcard name={product.name}/>
-                    </Link>
-                ))}
+                        <Link href={`/products/${product.id}`}>
+                            <Productcard name={product.name}/>
+                        </Link>
+                    ))}
+            </div>
+
+
+
+
+
             </div>
 
         </div>
