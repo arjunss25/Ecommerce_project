@@ -8,9 +8,10 @@ module.exports = {
   ],
   theme: {
   	extend: {
-  		fontFamily: {
-  			sans: ['Work Sans', 'sans-serif']
-  		},
+		fontFamily: {
+			sans: ['Poppins', 'sans-serif']
+		  }
+		  ,
   		colors: {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)'

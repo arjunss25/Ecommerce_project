@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { Star, Heart, Minus, Plus, Shield } from 'lucide-react';
 import { useState } from 'react';
 import Review from '@/app/Components/Review';
+import ProductDescription from '@/app/Components/Productdescription';
+import RatingBreakdown from '@/app/Components/Ratingbreakdown';
 
 const Page = ({ params }) => {
   const [quantity, setQuantity] = useState(1);
@@ -139,9 +141,19 @@ const Page = ({ params }) => {
                 </div>
               </div>
 
-              <Review/>
-              <div className="test mt-5">
-              <Review/>
+              {/* product-discription */}
+              <ProductDescription/>
+
+
+              {/* rating-section */}
+              <div className="ratingandreview-sec w-full px-10 bg-red-100 flex">
+                <div className="start-rating-sec w-[40vw] bg-green-500">
+                  <RatingBreakdown/>
+                </div>
+
+                <div className="review-card-sec w-[60vw] bg-orange-600">
+                  
+                </div>
               </div>
             </>
           );
