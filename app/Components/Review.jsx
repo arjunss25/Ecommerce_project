@@ -5,7 +5,7 @@ import { AiOutlineDislike } from "react-icons/ai";
 
 const Review = () => {
   return (
-    <div className="w-[50vw] mx-auto bg-[#F9F9F9] rounded-lg shadow-md overflow-hidden">
+    <div className="w-full lg:w-[50vw] bg-[#F9F9F9] rounded-lg shadow-md overflow-hidden">
       <div className="p-4">
         <div className="flex items-center mb-2">
           <img src="/api/placeholder/40/40" alt="User avatar" className="w-10 h-10 rounded-full mr-3" />
