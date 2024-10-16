@@ -1,99 +1,163 @@
-'use client'
-import React, { useState } from 'react';
-import { Package, ChevronRight } from 'lucide-react';
+// pages/register.js
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
-const OrderTracker = () => {
-  const [expandedOrder, setExpandedOrder] = useState(null);
+export default function Register() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
 
-  const orders = [
-    { id: 1, status: 'IN TRANSIT', date: '07-02-2024', product: 'SAUVAGE', partner: 'Blue dart', progress: 2 },
-    { id: 2, status: 'DELIVERED', date: '07-02-2024', product: 'SAUVAGE', partner: 'Blue dart', progress: 1 },
-    { id: 3, status: 'DELIVERED', date: '07-02-2024', product: 'SAUVAGE', partner: 'Blue dart', progress: 3 },
-    { id: 4, status: 'DELIVERED', date: '07-02-2024', product: 'SAUVAGE', partner: 'Blue dart', progress: 4 },
-  ];
-
-  const trackingSteps = ['Order Confirmed', 'Processing', 'Shipping', 'Delivered'];
-
-  const trackingHistory = [
-    { date: '07-02-2024 - 05:50 Pm', location: 'Kochi', status: 'Order Processed' },
-    { date: '07-02-2024 - 05:50 Pm', location: 'Kochi', status: 'Order Processed' },
-    { date: '07-03-2024 - 05:50 Pm', location: 'Kochi', status: 'Order Processed' },
-    { date: '07-02-2024 - 05:50 Pm', location: 'Kochi', status: 'Order Processed' },
-  ];
-
-  const toggleOrderDetails = (orderId) => {
-    setExpandedOrder(expandedOrder === orderId ? null : orderId);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      if (response.ok) {
+        router.push('/login');
+      } else {
+        // Handle error
+      }
+    } catch (error) {
+      console.error('Registration error:', error);
+    }
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg">
-      <h1 className="text-2xl font-bold mb-4">Order Tracker</h1>
-      
-      {orders.map((order) => (
-        <div key={order.id} className="mb-2">
-          <div className="flex items-center justify-between p-2 bg-gray-100 rounded">
-            <div className="flex items-center">
-              <Package size={20} className={order.status === 'IN TRANSIT' ? 'text-orange-500' : 'text-green-500'} />
-              <span className={`ml-2 ${order.status === 'IN TRANSIT' ? 'text-orange-500' : 'text-green-500'} font-semibold`}>
-                {order.status}
-              </span>
-              <span className="ml-4 text-gray-600">{order.date}</span>
-            </div>
-            <div className="flex items-center">
-              <span className="mr-4">{order.product}</span>
-              <span className="mr-4">{order.partner}</span>
-              <button className="text-blue-500" onClick={() => toggleOrderDetails(order.id)}>
-                More Details <ChevronRight size={16} className="inline" />
-              </button>
-            </div>
-          </div>
-          
-          {expandedOrder === order.id && (
-            <div className="mt-2 p-4 bg-gray-100 rounded">
-              <div className="text-center text-sm text-gray-600 mb-4">Order id: 1234567890543</div>
-              <div className="flex justify-between mb-4 relative">
-                {trackingSteps.map((step, index) => (
-                  <div key={index} className="flex-1 relative">
-                    <div 
-                      className={`h-1 ${index < order.progress ? 'bg-green-500' : 'bg-gray-300'}`}
-                      style={{ width: '100%' }}
-                    ></div>
-                    <div className="absolute top-[-8px] left-1/2 transform -translate-x-1/2">
-                      <div className={`w-5 h-5 rounded-full border-2 ${index < order.progress ? 'bg-green-500 border-green-500' : 'bg-white border-gray-300'} flex items-center justify-center`}>
-                        {index < order.progress && (
-                          <svg className="w-3 h-3 text-white" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M5 13l4 4L19 7"></path>
-                          </svg>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <table className="w-full">
-                <thead>
-                  <tr className="text-left text-sm text-gray-600">
-                    <th>Date & Time</th>
-                    <th>Location</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {trackingHistory.map((item, index) => (
-                    <tr key={index} className="text-sm">
-                      <td>{item.date}</td>
-                      <td>{item.location}</td>
-                      <td>{item.status}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <button type="submit">Register</button>
+    </form>
   );
-};
+}
 
-// export default OrderTracker;
+// pages/login.js
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+
+export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      if (response.ok) {
+        const { accessToken, refreshToken } = await response.json();
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('refreshToken', refreshToken);
+        router.push('/otp');
+      } else {
+        // Handle error
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <button type="submit">Login</button>
+    </form>
+  );
+}
+
+// pages/otp.js
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+
+export default function OTP() {
+  const [otp, setOtp] = useState('');
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const accessToken = localStorage.getItem('accessToken');
+      const response = await fetch('/api/validate-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({ otp }),
+      });
+      if (response.ok) {
+        router.push('/dashboard');
+      } else {
+        // Handle error
+      }
+    } catch (error) {
+      console.error('OTP validation error:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={otp}
+        onChange={(e) => setOtp(e.target.value)}
+        required
+      />
+      <button type="submit">Validate OTP</button>
+    </form>
+  );
+}
+
+// utils/auth.js
+export function getAccessToken() {
+  return localStorage.getItem('accessToken');
+}
+
+export async function refreshAccessToken() {
+  const refreshToken = localStorage.getItem('refreshToken');
+  try {
+    const response = await fetch('/api/refresh-token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ refreshToken }),
+    });
+    if (response.ok) {
+      const { accessToken } = await response.json();
+      localStorage.setItem('accessToken', accessToken);
+      return accessToken;
+    } else {
+      throw new Error('Failed to refresh token');
+    }
+  } catch (error) {
+    console.error('Token refresh error:', error);
+    // Handle error (e.g., redirect to login)
+  }
+}
