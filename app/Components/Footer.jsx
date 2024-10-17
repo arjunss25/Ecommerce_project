@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <div className='w-full h-auto lg:h-[50vh] mt-20 bg-[#01225B]'>
+    <div className='w-full h-auto lg:h-[50vh]  bg-[#01225B]'>
 
     {/* top */}
     <div className="top-section w-full h-auto lg:h-[40vh] flex flex-col lg:flex-row p-5">

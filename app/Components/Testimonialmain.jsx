@@ -20,7 +20,7 @@ const testimonialData =[
 
 
   return (
-    <div className='mt-20 w-full h-[60vh] flex'>
+    <div className='my-20 w-full h-[60vh] flex'>
         <div className="left-section w-[30vw] h-full flex items-center justify-center">
             <h1 className='text-[3.5rem] font-semibold leading-none'>What They Say <br/>About Us</h1>
         </div>
