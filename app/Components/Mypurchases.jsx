@@ -34,7 +34,7 @@ const renderTab = () =>{
       {/* orders-section */}
 
       <div className="tabs-section w-full h-[10vh]  border-black border-b-[2px] relative">
-        <ul className='w-full flex items-center h-full justify-between lg:text-[1.5rem]'>
+        <ul className='w-full flex items-center h-full justify-between lg:text-[1.2rem]'>
           <li className='w-[30vw] sm:w-[10rem] py-2 flex items-center justify-center cursor-pointer ' onClick={() => settab('orders')}>Orders</li>
           <li className='w-[30vw] sm:w-[10rem] py-2 flex items-center justify-center cursor-pointer ' onClick={() => settab('completed')}>Completed</li>
           <li className='w-[30vw] sm:w-[10rem] py-2 flex items-center justify-center cursor-pointer ' onClick={() => settab('cancelled')}>Cancelled</li>

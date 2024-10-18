@@ -56,14 +56,14 @@ const trackActiveSection = ()=>{
           <nav>
             <ul className="space-y-2">
               <li className={`text-lg  ${activeSection === 'accountsettings' ? "text-black font-medium" : "text-gray-600"} cursor-pointer`} onClick={() =>setactiveSection('accountsettings')}>Account Settings</li>
-              <li className="text-lg text-gray-600 cursor-pointer" onClick={() =>setactiveSection('mypurchase')}>My Purchase</li>
-              <li className="text-lg text-gray-600 cursor-pointer" onClick={() =>setactiveSection('notification')}>Notifications</li>
+              <li className={`text-lg  ${activeSection === 'mypurchase' ? "text-black font-medium" : "text-gray-600"} cursor-pointer`} onClick={() =>setactiveSection('mypurchase')}>My Purchase</li>
+              <li className={`text-lg  ${activeSection === 'notification' ? "text-black font-medium" : "text-gray-600"} cursor-pointer`} onClick={() =>setactiveSection('notification')}>Notifications</li>
             </ul>
           </nav>
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-4 lg:p-6">
+        <div className="flex-1 p-4 lg:p-6 mb-10">
           {trackActiveSection()}
         </div>
 
