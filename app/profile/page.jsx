@@ -1,14 +1,29 @@
-import React from 'react';
-import { Camera, Edit2 } from 'lucide-react';
+'use client'
+
+import React, { useState } from 'react';
 import MainNavbar from '../Components/MainNavbar';
 import Secondarynavbar from '../Components/Secondarynavbar';
 import Image from 'next/image';
 import Accountsettings from '../Components/Accountsettings';
+import Mypurchases from '../Components/Mypurchases';
+import Notification from '../Components/Notification';
 
 export default function AccountSettings() {
 
+const [activeSection, setactiveSection] = useState('accountsettings');
 
 
+const trackActiveSection = ()=>{
+  if(activeSection === 'accountsettings'){
+    return <Accountsettings/>
+  }else if(activeSection === 'mypurchase'){
+    return <Mypurchases/>
+  }else if(activeSection === 'notification'){
+    return <Notification/>
+  }else{
+    return <Accountsettings/>
+  }
+}
 
   
   return (
@@ -39,16 +54,16 @@ export default function AccountSettings() {
 
           <nav>
             <ul className="space-y-2">
-              <li className="text-lg font-medium text-gray-900">Account Settings</li>
-              <li className="text-lg text-gray-600">My Purchase</li>
-              <li className="text-lg text-gray-600">Notifications</li>
+              <li className="text-lg font-medium text-gray-900 cursor-pointer" onClick={() =>setactiveSection('accountsettings')}>Account Settings</li>
+              <li className="text-lg text-gray-600 cursor-pointer" onClick={() =>setactiveSection('mypurchase')}>My Purchase</li>
+              <li className="text-lg text-gray-600 cursor-pointer" onClick={() =>setactiveSection('notification')}>Notifications</li>
             </ul>
           </nav>
         </div>
 
         {/* Main Content */}
         <div className="flex-1 p-4 lg:p-6">
-          <Accountsettings/>
+          {trackActiveSection()}
         </div>
 
 
