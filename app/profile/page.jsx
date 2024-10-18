@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Accountsettings from '../Components/Accountsettings';
 import Mypurchases from '../Components/Mypurchases';
 import Notification from '../Components/Notification';
+import Footer from '../Components/Footer';
 
 export default function AccountSettings() {
 
@@ -31,7 +32,7 @@ const trackActiveSection = ()=>{
       <MainNavbar />
       <Secondarynavbar />
 
-      <div className="flex flex-col lg:flex-row min-h-screen">
+      <div className="flex flex-col lg:flex-row">
         {/* Sidebar */}
         <div className="lg:w-[20rem] w-full bg-white p-6 border-b lg:border-r border-gray-200">
           <div className="flex items-center gap-3 mb-8">
@@ -54,7 +55,7 @@ const trackActiveSection = ()=>{
 
           <nav>
             <ul className="space-y-2">
-              <li className="text-lg font-medium text-gray-900 cursor-pointer" onClick={() =>setactiveSection('accountsettings')}>Account Settings</li>
+              <li className={`text-lg  ${activeSection === 'accountsettings' ? "text-black font-medium" : "text-gray-600"} cursor-pointer`} onClick={() =>setactiveSection('accountsettings')}>Account Settings</li>
               <li className="text-lg text-gray-600 cursor-pointer" onClick={() =>setactiveSection('mypurchase')}>My Purchase</li>
               <li className="text-lg text-gray-600 cursor-pointer" onClick={() =>setactiveSection('notification')}>Notifications</li>
             </ul>
@@ -70,6 +71,8 @@ const trackActiveSection = ()=>{
 
         
       </div>
+
+      <Footer/>
     </div>
   );
 }
