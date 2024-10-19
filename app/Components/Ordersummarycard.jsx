@@ -4,11 +4,11 @@ import { MdDelete } from 'react-icons/md';
 
 const Ordersummarycard = () => {
   return (
-    <div className="w-full max-w-[40rem]  rounded-[2rem] overflow-hidden flex flex-col sm:flex-row">
-      <div className="left-section w-full sm:w-[30%] aspect-square sm:aspect-auto bg-yellow-500">
-        <div className="relative w-full h-full bg-green-500">
+    <div className="w-full max-w-[40rem]  rounded-[2rem] overflow-hidden flex flex-col sm:flex-row border-black border-[2px]">
+      <div className="left-section w-full sm:w-[30%] aspect-square sm:aspect-auto">
+        <div className="relative w-full h-full">
           <Image
-            className="object-cover"
+            className="object-cover rounded-[1rem]"
             src="/productimg.png"
             layout="fill"
             alt="Product image"
@@ -16,7 +16,7 @@ const Ordersummarycard = () => {
         </div>
       </div>
 
-      <div className="right-section w-full sm:w-[70%] bg-zinc-200 p-4 sm:p-5 flex flex-col justify-between">
+      <div className="right-section w-full sm:w-[70%] p-4 sm:p-5 flex flex-col justify-between">
         <div className="top w-full flex items-start justify-between">
           <div>
             <h2 className="text-base sm:text-lg">Perfume</h2>
