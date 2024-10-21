@@ -70,7 +70,7 @@ const Searchbar = () => {
   }
 
   return (
-    <div className={`absolute w-full h-[50vh] bg-white top-0 left-0 z-[50] ${isSearchOpen ? "visible" : "hidden"}`}>
+    <div className={`absolute w-full h-[50vh] bg-white top-0 left-0 z-[99999] ${isSearchOpen ? "visible" : "hidden"}`}>
       <div className="top-sec w-full flex items-center justify-center gap-3 lg:gap-10 h-[15vh]">
         <GoSearch onClick={searchToggle} className='text-[1.5rem] cursor-pointer'/>
         <input 

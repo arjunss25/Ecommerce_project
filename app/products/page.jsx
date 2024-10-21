@@ -26,7 +26,7 @@ const page = () => {
         <Secondarynavbar/>
         <div className='content-sec flex relative'>
 
-            <div className='sidebar-sec w-[300px]  h-screen bg-red-500 absolute md:relative z-[50] hidden lg:block '>
+            <div className='sidebar-sec w-[300px]  h-screen absolute md:relative z-[50] hidden lg:block '>
                 <Sidebar/>
             </div>
 
