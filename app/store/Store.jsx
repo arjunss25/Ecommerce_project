@@ -1,18 +1,7 @@
 
-// import { configureStore } from '@reduxjs/toolkit'
-
-// export const makeStore = () => {
-//   return configureStore({
-//     reducer: {},
-//   })
-// }
-
-// export const store = makeStore()
-
-
 
 import { configureStore } from '@reduxjs/toolkit'
-import searchReducer from '../store/Slice'  // Adjust the import path as needed
+import searchReducer from '../store/Slice'  
 
 // Create the store
 const store = configureStore({
@@ -32,3 +21,5 @@ export const makeStore = () => {
     },
   })
 }
+
+
