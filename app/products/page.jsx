@@ -6,6 +6,7 @@ import { CiFilter } from "react-icons/ci";
 import { products } from '../utils/Produtsarray';
 import Link from 'next/link';
 import Productcard from '../Components/Productcard';
+import Sidebar from '../Productscomponents/Sidebar';
 
 const page = () => {
 
@@ -26,7 +27,7 @@ const page = () => {
         <div className='content-sec flex relative'>
 
             <div className='sidebar-sec w-[300px]  h-screen bg-red-500 absolute md:relative z-[50] hidden lg:block '>
-
+                <Sidebar/>
             </div>
 
             <div className='main-sec w-full lg:w-[calc(100%-300px)] min-h-screen  px-10 py-2 lg:py-10'>
