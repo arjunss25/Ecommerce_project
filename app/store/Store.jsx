@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import { configureStore } from '@reduxjs/toolkit';
 import searchReducer from '../store/Slice';  
 import cartReducer from './cartSlice';
 import dropdownReducer from './dropdownSlice' // Import the cart slice
+=======
+
+
+import { configureStore } from '@reduxjs/toolkit'
+import searchReducer from '../store/Slice'  
+>>>>>>> 4f5cbe0edd6cefa9586b58608131b8964c1cb126
 
 // Create the store
 const store = configureStore({
@@ -23,5 +30,12 @@ export const makeStore = () => {
       cart: cartReducer,
       dropdown: dropdownReducer, // Add the cart slice reducer here as well
     },
+<<<<<<< HEAD
   });
 };
+=======
+  })
+}
+
+
+>>>>>>> 4f5cbe0edd6cefa9586b58608131b8964c1cb126
