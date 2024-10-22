@@ -3,8 +3,20 @@ import Image from "next/image";
 import { IoMdStar } from "react-icons/io";
 import { IoMdCart } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/cartSlice";
 
-const Productcard = () => {
+const Productcard = ({product}) => {
+
+
+const dispatch = useDispatch()
+
+const handleAddToCart = () =>{
+    dispatch(addToCart(product))
+}
+
+
+
   return (
     <div className='w-[18rem] h-[55vh] bg-[#F7F6FB] rounded-[1.5rem] pb-3'>
         <div className="product-img h-[45%] overflow-hidden relative">
@@ -47,7 +59,7 @@ const Productcard = () => {
 
                 <div className="add-cart-btn w-[9rem] py-2 rounded-tl-full rounded-bl-full bg-black text-white flex mt-2 justify-center items-center gap-2 absolute bottom-8 right-0">
                 <IoMdCart className='text-[1.2rem]' />
-                <h1 className='text-[0.9rem]'>Add to Cart</h1>
+                <h1 className='text-[0.9rem]' onClick={handleAddToCart}>Add to Cart</h1>
                 </div>
             </div>
         </div>

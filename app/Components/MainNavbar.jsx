@@ -95,7 +95,7 @@ const MainNavbar = () => {
         </Link>
 
         <div className="relative">
-          <Link href="" className="px-3 lg:px-5 py-1 lg:py-2 bg-black text-white flex items-center justify-center gap-3 rounded-full text-[1.3rem] lg:text-[1rem]">
+          <Link href="/cart" className="px-3 lg:px-5 py-1 lg:py-2 bg-black text-white flex items-center justify-center gap-3 rounded-full text-[1.3rem] lg:text-[1rem]">
             <HiOutlineShoppingCart />{' '}
             <span className="hidden lg:block">Cart</span>
           </Link>

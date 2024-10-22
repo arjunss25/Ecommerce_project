@@ -3,19 +3,29 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import Link from 'next/link';
 import Dropdown from './Dropdown';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleCategory, toggleProducts } from '../store/Dropdownslice';
 
 const Secondarynavbar = () => {
+
+  const dispatch = useDispatch()
+
+  const {categoryOpen,productsOpen} = useSelector((state) => state.dropdown)
+
   return (
     <div className='w-full h-[10vh] bg-[#AAF1FF] px-10  hidden lg:flex items-center justify-between'>
 
         <div className="category-div relative">
-            <Link href="" className='flex gap-2 items-center'>Category <IoMdArrowDropdown /></Link>
-            <Dropdown/>
+            <Link href="" className='flex gap-2 items-center'onClick={() => dispatch(toggleCategory())}>Category <IoMdArrowDropdown /></Link>
+            <Dropdown isOpen ={categoryOpen}/>
         </div>
 
         <div className="nav-links-main flex gap-10">
             <Link href="">Home</Link>
-            <Link href="" className='flex gap-2 items-center' >Products <IoMdArrowDropdown /></Link>
+            <div className='relative'>
+            <Link href="" className='flex gap-2 items-center ' onClick={() =>dispatch(toggleProducts())} >Products <IoMdArrowDropdown /></Link>
+            <Dropdown isOpen={productsOpen}/>
+            </div>
             <Link href="">About</Link>
             <Link href="">Contact</Link>
         </div>

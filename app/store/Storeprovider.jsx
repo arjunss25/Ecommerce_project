@@ -13,7 +13,9 @@ export default function StoreProvider({ children }) {
     storeRef.current = typeof window !== 'undefined' ? store : makeStore()
   }
 
-  return <Provider store={storeRef.current}>{children}</Provider>
+  return <Provider store={storeRef.current}>
+    {children}
+    </Provider>
 }
 
 

@@ -1,4 +1,4 @@
-
+'use client'
 import Heroslider from '../Components/Heroslider'
 import MainNavbar from '../Components/MainNavbar'
 import Secondarynavbar from '../Components/Secondarynavbar'
@@ -41,8 +41,8 @@ const page = () => {
 
 
             <div className='w-full  mt-10 flex items-center justify-center gap-8 flex-wrap'>
-                {products.map((product) =>(
-                        <Link href={`/products/${product.id}`}>
+                {products.map((product,i) =>(
+                        <Link key={i} href={`/products/${product.id}`}>
                             <Productcard name={product.name}/>
                         </Link>
                     ))}

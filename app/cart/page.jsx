@@ -1,4 +1,5 @@
 'use client'
+import { useSelector } from 'react-redux'
 import Cartproductscard from '../cartcomponents/Cartproductscard'
 import Checkbox from '../Components/Checkbox'
 import Footer from '../Components/Footer'
@@ -7,6 +8,9 @@ import Ordersummary from '../Components/Ordersummary'
 import Secondarynavbar from '../Components/Secondarynavbar'
 
 const Cart = () => {
+  const cartItem = useSelector((state) => state.cart.cartItem);
+  console.log(cartItem);
+  
   return (
     <div className="min-h-screen flex flex-col">
       <MainNavbar />
@@ -26,9 +30,9 @@ const Cart = () => {
           {/* Cart items section */}
           <div className="space-y-6">
             <Cartproductscard />
+            {/* <Cartproductscard />
             <Cartproductscard />
-            <Cartproductscard />
-            <Cartproductscard />
+            <Cartproductscard /> */}
           </div>
         </div>
 
