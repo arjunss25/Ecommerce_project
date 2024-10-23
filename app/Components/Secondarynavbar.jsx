@@ -5,7 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import Link from 'next/link';
 import Dropdown from './Dropdown';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeAllDropdowns, toggleCategory, toggleProducts } from '../store/Dropdownslice';
+import { closeAllDropdowns, toggleCategory, toggleProducts } from '../store/dropdownslice';
 
 
 const Secondarynavbar = () => {
