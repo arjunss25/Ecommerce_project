@@ -5,6 +5,7 @@ import { MdDelete } from "react-icons/md";
 import { FiPlus, FiMinus } from "react-icons/fi";
 
 const Cartproductscard = () => {
+
   return (
     <div className='w-full max-w-4xl mx-auto border-b-2 border-black py-4'>
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
