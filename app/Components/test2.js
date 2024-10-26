@@ -17,12 +17,12 @@ const Newlaunches = () => {
           <ProductCard key={product.id} product={product} /> // Pass product as prop
         ))}
       </div>
-      {/* <div className="bt-section mt-10">
+      <div className="bt-section mt-10">
         <Link href={'/products/newlaunch'}>
           <Mainbtn />
         </Link>
       </div>
-    </div> */}
+    </div>
   );
 };
 
